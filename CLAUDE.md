@@ -22,13 +22,14 @@ Find every row that matches the task at hand and read those files before produci
 | Any words a visitor or audience will read (copy, titles, microcopy, translations) | `source/brand/voice.md` |
 | Any visual decision (layout, color, type, spacing, imagery, components) | `source/brand/design.md` + `source/brand/tokens.css` |
 | Website pages, navigation, or structure | `source/formats/website.md` |
+| A web app or interactive tool (calculator, simulator, form flow, dashboard) | `source/formats/webapp.md`, plus voice and design above |
 | A deck or presentation | `source/formats/deck.md`, plus voice and design above |
 | Files the owner dropped for you | `source/inbox/README.md` |
 | Repeated items (gallery pieces, products, projects, events) | the collections section of `source/formats/website.md` |
 | Facts about the owner or project (bio, dates, prices, claims) | `source/content/` (never invent facts; ask if missing) |
 | A third-party stat, benchmark, or figure from outside the project | `source/facts/` (never invent facts; every entry needs a source) — see the `research` skill |
 | The owner wants to look something up, or wants a recurring watch on a topic | `.claude/skills/research/SKILL.md` |
-| Starting a new project, or something the owner calls "a different site" | `.claude/skills/new-project/SKILL.md` (decide new repo vs. variant before creating anything) |
+| Starting a new project, or something the owner calls "a different site" or "an app" | `.claude/skills/new-project/SKILL.md` (decide new repo vs. sub-site/sub-app in this one, before creating anything) |
 | Publishing, hosting, domains | `docs/deploy-cloudflare.md` |
 | An install or hosting step fails, or the owner pastes an error | `docs/troubleshooting.md` — check it before improvising; if the problem isn't in it, add the entry once solved |
 
@@ -64,9 +65,11 @@ source/brand/design.md       how we look
 source/brand/tokens.css      the only place colors/fonts/spacing are defined
 source/brand/assets/         original images, logos, scans (high-res)
 source/formats/website.md    website playbook (pages, collections, images, SEO)
+source/formats/webapp.md     web-app playbook (page vs app, stack, data rules, publishing)
 source/formats/deck.md       deck playbook + source/formats/deck-template.html
 site/                        the Astro website (npm run dev / build inside it)
 site/public/decks/<slug>/    published decks, one self-contained HTML each
+apps/<slug>/                 web apps of this project, one self-contained folder each
 scripts/bootstrap-*          one-command install for a new machine/owner (mac + windows)
 docs/deploy-cloudflare.md    hosting and DNS, step by step
 docs/troubleshooting.md      the install/hosting FAQ (living: add solved problems to it)

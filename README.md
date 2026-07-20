@@ -1,6 +1,6 @@
 # Agentic organization starter kit
 
-Run your organization as code: your website, your decks, your facts and your voice in one repo you own, operated by AI. You talk; it reads your guides, does the work, publishes, and learns.
+Run your organization as code: your website, your apps, your decks, your facts and your voice in one repo you own, operated by AI. You talk; it reads your guides, does the work, publishes, and learns.
 
 This is the workflow I use to run everything from a nonprofit's full marketing site to an artist's gallery and shop to my own one-page projects. Enough people have asked "how do you do that?" that I packaged it. Clone this, spend an hour on setup with a technical friend (or with me), and from then on you update your site by talking.
 
@@ -49,6 +49,7 @@ source/              your source of truth
   formats/           one playbook per output: website pages, decks
 site/                the website itself (Astro, deployed by Cloudflare Pages)
 site/public/decks/   your presentations, each a single shareable HTML file
+apps/                your web apps (a calculator, a form flow, a tool), one folder each
 scripts/             one-command install scripts (mac + windows)
 docs/                how it works, the Cloudflare deploy guide, the troubleshooting FAQ
 .claude/             skills (setup, new-project, publish, new-deck, research, reflect) + hooks
@@ -86,7 +87,8 @@ A few things to say once you're in, to get a feel for it:
 - **"Set up my site."** — the first-session interview; starts everything.
 - **"Set up my site from my existing site at [URL]."** — skips straight to scraping it.
 - **"Here's my old site's repo: [URL]. Set up from that."** — mines the raw files instead of the rendered pages (often richer).
-- **"I want to start a new project for [someone/something else]."** — a different client or brand gets its own repo, never mixed into this one.
+- **"Build me a [calculator / simulator / intake form] for this project."** — a web app in `apps/`, same brand, same repo, published under the site or on its own URL.
+- **"I want to start a new project for [someone/something else]."** — a different client or brand gets its own repo, never mixed into this one. (Same project's tool or sub-site stays here; the AI makes that call before creating anything.)
 - **"Find me real numbers on [X]."** — a sourced research pass, banked for later.
 - **"Make a deck for [occasion], here are my notes."** — a new presentation from a brief.
 - **"This doesn't sound like me — [what's off]."** — corrects the voice guide, permanently, for every future page and deck.

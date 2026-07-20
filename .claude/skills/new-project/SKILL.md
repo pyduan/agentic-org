@@ -1,6 +1,6 @@
 ---
 name: new-project
-description: "Decide whether a new request needs its own separate repo or is a variant of the current project, then act on it. Use when the owner says they want to start something new, set up another site, or build for a different client/brand — before creating anything."
+description: "Decide whether a new request needs its own separate repo or is a variant of the current project (a sub-site, a sub-app, a new page), then act on it. Use when the owner says they want to start something new, set up another site, build a web app, or work for a different client/brand — before creating anything."
 ---
 
 # New project or a variant?
@@ -26,11 +26,22 @@ looks like this project, a new deck for a different audience. **Don't create a n
 what already exists:
 
 - A new page or collection → `source/formats/website.md`, build it in `site/`.
+- A **web app for the same project** (a calculator, a simulator, an intake form, a small tool) →
+  `apps/<slug>/` per `source/formats/webapp.md` — same repo, same brand; it publishes under the
+  site or as its own Cloudflare Pages project on this repo, but it is **not** a new repo.
+- A **sub-site** (a seasonal microsite, an event page, a landing for a campaign) that still sounds
+  and looks like this project → a section or page of `site/`, or `apps/<slug>/` if it's genuinely
+  its own little thing; still this repo.
 - A new deck → the `new-deck` skill.
 - A new language → extend the site's i18n per `source/formats/website.md`; the voice guide already
   has the rules for language quality.
 - A sub-brand under the same organization (e.g. a program or product line) → a design/voice
   variation lives as a section of `source/brand/design.md`/`voice.md`, not a fork of the whole kit.
+
+The dividing line, in one question: **would this thing cite this repo's facts and speak in this
+repo's voice?** Yes → it lives here (site page, sub-site, or `apps/`). No → new repo. (Real case:
+someone's personal webapp next to the lab site they contribute to — different project, own repo,
+own Cloudflare Pages project; nesting it as a subfolder of the lab's repo is the mistake.)
 
 ## It's a new project — a new repo
 
