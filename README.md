@@ -6,11 +6,19 @@ This is the workflow I use to run everything from a nonprofit's full marketing s
 
 Paul Duan · [@pyduan](https://github.com/pyduan) · [paulduan.com](https://www.paulduan.com)
 
+## Why this exists
+
+Three problems kept showing up, in organizations and solo projects alike:
+
+- **Middlemen that don't help.** Non-technical people end up fighting a SaaS site builder (a subscription, an editor that fights back, content locked inside, someone else's banner on your own page) or depending on a developer for every comma.
+- **Shadow AI.** Everyone prompts in their own corner. The same work gets redone everywhere, and the AI never learns at the scale of the project or the team: every session starts from scratch.
+- **Version chaos.** `v3_FINAL_def(reviewed).xlsx` scattered across the Drive, desktops, inboxes, and people's heads. Nobody knows which one is true.
+
+The answer isn't a better prompt or one more tool: it's **governance embedded in the structure of a repo**. Write what the AI must know into plain files that inherit from one another — your identity and facts, your voice, your per-format rules, your personal voice on top — and the AI reads them fresh every session. Change a fact at the source and every future page, deck, and post is right by construction. That's the whole trick: you don't prompt-engineer, you maintain guides, and only once.
+
 ## The idea
 
-Most people maintain a website by fighting a CMS, or by paying someone to fight it for them. This kit takes a different route:
-
-- **One repo is the source of truth.** Your content, your voice guide, your design system, and your format playbooks all live here as plain files. The website and every deck are derivatives, rebuilt from those sources.
+- **One repo is the source of truth.** Your content, your voice guide, your design system, and your format playbooks all live here as plain files. The website and every deck are derivatives, rebuilt from those sources. You don't integrate a mockup, you keep a design system; you don't email talking points around in Word files, you keep a facts library that's always current for everyone.
 - **AI is the operator.** You open the folder in [Claude Code](https://claude.com/claude-code) and talk in plain language. It reads your guides on its own (the repo tells it where everything is), makes the change, shows you the result, and publishes.
 - **Git remembers everything.** Every version of every page is kept forever, so nothing you do can break the site permanently.
 - **Publishing is free and automatic.** Cloudflare Pages watches the repo and puts every change live on your domain in about a minute.
@@ -50,9 +58,20 @@ The guides ship as genericized templates distilled from real projects. The first
 
 About an hour, three ways to do it — pick whichever fits, they all end the same place. Full detail in [SETUP.md](SETUP.md):
 
-- **Let Claude install itself.** Open [Claude Code](https://claude.com/claude-code) (the desktop app is the easiest on-ramp if you're not a terminal person) and paste one prompt; it checks your machine, installs whatever's missing, and creates your own copy of this repo.
+- **Let Claude install itself.** Open [Claude Code](https://claude.com/claude-code) (the desktop app is the easiest on-ramp if you're not a terminal person) and paste the prompt below; it checks your machine, installs whatever's missing, and creates your own copy of this repo.
 - **Run a script.** One command, Mac or Windows, does the same thing deterministically — good for a technical helper setting this up for someone else.
 - **Do it by hand.** Click **Use this template** on GitHub, install the few tools yourself, clone it.
+
+The prompt to paste, if you go the first route:
+
+> I want to set up my own site using the ai-operator template
+> (github.com/pyduan/ai-operator). Check what's already on my machine (git,
+> Node, the GitHub CLI, and whether I'm logged into GitHub). Ask me Mac or
+> Windows if you can't tell from my system. Install whatever's missing,
+> explaining each step in plain language and asking before anything that
+> needs my password. Log me into GitHub (the browser-based login, not an
+> SSH key). Then ask me for my project's name and where I'd like it on my
+> computer, and create my own private copy of the template repo there.
 
 Either way you end up with your own copy, cloned locally, and a first session that interviews you and builds v1. After that it's yours: open the folder, run `claude` (or the desktop app), talk.
 
@@ -67,6 +86,10 @@ A few things to say once you're in, to get a feel for it:
 - **"Find me real numbers on [X]."** — a sourced research pass, banked for later.
 - **"Make a deck for [occasion], here are my notes."** — a new presentation from a brief.
 - **"This doesn't sound like me — [what's off]."** — corrects the voice guide, permanently, for every future page and deck.
+
+## When you grow
+
+The kit is tuned for one owner working solo on `main`. When a second regular contributor joins, the switch is one conversation: contributors move to branches and pull requests, one person merges, and everything else stays the same — the same guides, the same cascade, now with a review before publishing. The mental model (and the escalation paths for content and features) is in [docs/how-it-works.md](docs/how-it-works.md).
 
 ## Where this comes from
 
