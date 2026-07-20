@@ -30,6 +30,7 @@ Find every row that matches the task at hand and read those files before produci
 | A third-party stat, benchmark, or figure from outside the project | `source/facts/` (never invent facts; every entry needs a source) — see the `research` skill |
 | The owner wants to look something up, or wants a recurring watch on a topic | `.claude/skills/research/SKILL.md` |
 | Starting a new project, or something the owner calls "a different site" or "an app" | `.claude/skills/new-project/SKILL.md` (decide new repo vs. sub-site/sub-app in this one, before creating anything) |
+| The kit/framework was updated and the owner wants the newest guides/skills/scripts | `.claude/skills/update-kit/SKILL.md` (pull template improvements, keep the owner's content, re-apply follow-ups) |
 | Publishing, hosting, domains | `docs/deploy-cloudflare.md` |
 | An install or hosting step fails, or the owner pastes an error | `docs/troubleshooting.md` — check it before improvising; if the problem isn't in it, add the entry once solved |
 
@@ -74,5 +75,5 @@ scripts/bootstrap-*          one-command install for a new machine/owner (mac + 
 docs/deploy-cloudflare.md    hosting and DNS, step by step
 docs/troubleshooting.md      the install/hosting FAQ (living: add solved problems to it)
 docs/how-it-works.md         the mental model, for humans
-.claude/skills/              setup · new-project · publish · new-deck · research · reflect
+.claude/skills/              setup · new-project · publish · new-deck · research · reflect · update-kit
 ```

@@ -43,6 +43,30 @@ stays self-contained); the voice guide applies to every label and message.
   the app as an interactive **view** of it — change the assumptions at the source, the app
   follows.
 
+## When an app needs a real backend (state, accounts, a database)
+
+Static-first covers most of what this kit is for. When an app genuinely needs a server, a shared
+database, real auth or file uploads, escalate deliberately — cheapest and most *sovereign* first,
+because the whole point of this kit is that **you own your source of truth and stay lock-in-free**:
+
+1. **Can it stay client-side?** Often yes: a data file + browser computation, a `mailto:` or a
+   Stripe Payment Link instead of a form backend, a read-only dashboard over a committed CSV. Prefer
+   this — it keeps the app in the repo, free on Cloudflare Pages, owned end to end.
+2. **A sovereign backend the owner controls.** If it truly needs state: a Cloudflare Worker + D1/KV
+   (same account that already hosts the site), or a self-hostable open-source backend (Supabase,
+   PocketBase). The data and code stay the owner's, exportable, no vendor runtime. This is the right
+   escalation for anything meant to last.
+3. **An agent-native app builder (fast, but lock-in) — a pointer, not a default.** Tools like
+   [Lakebed](https://docs.lakebed.dev) let an agent spin up a small full-stack TypeScript app
+   ("capsule": typed DB, auth, storage) and deploy it in one flow. Philosophically aligned (agent
+   builds it) and great for a quick stateful prototype, **but** it runs on the vendor's proprietary
+   runtime + database on a vendor subdomain — the opposite of "own your repo, no lock-in." So point a
+   technical owner to it only when speed beats ownership and they accept the tradeoff; never make it
+   the default, and never move the source of truth into it.
+
+Whatever the choice, the source of truth stays in this repo; a backend is a dependency the app
+talks to, not the place your facts, voice, or content live.
+
 ## Publishing
 
 Two options, simplest first:

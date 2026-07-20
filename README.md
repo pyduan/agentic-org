@@ -52,7 +52,7 @@ site/public/decks/   your presentations, each a single shareable HTML file
 apps/                your web apps (a calculator, a form flow, a tool), one folder each
 scripts/             one-command install scripts (mac + windows)
 docs/                how it works, the Cloudflare deploy guide, the troubleshooting FAQ
-.claude/             skills (setup, new-project, publish, new-deck, research, reflect) + hooks
+.claude/             skills (setup, new-project, publish, new-deck, research, reflect, update-kit) + hooks
 ```
 
 The guides ship as genericized templates distilled from real projects. The first session personalizes them: the AI interviews you, then builds from whatever you start with — documents dropped in the inbox, an existing live site it scrapes, or an existing repo it clones and mines for content (rebasing onto this kit's own structure, never reusing the old code) — or from nothing at all, if you're starting fresh.
@@ -92,6 +92,11 @@ A few things to say once you're in, to get a feel for it:
 - **"Find me real numbers on [X]."** — a sourced research pass, banked for later.
 - **"Make a deck for [occasion], here are my notes."** — a new presentation from a brief.
 - **"This doesn't sound like me — [what's off]."** — corrects the voice guide, permanently, for every future page and deck.
+- **"Update the framework."** — pulls the latest kit improvements (new skills, better guides) into your project, keeping all your own content.
+
+## Staying up to date
+
+This kit keeps improving. Your project is your own copy, so it doesn't change on its own — when you want the latest, open your project in Claude Code and say **"update the framework"** (the `update-kit` skill). It pulls the newest guides, skills, and scripts from the template, **leaves all your content untouched** (your pages, your facts, your voice), and tells you if any improvement needs a small follow-up. Then it commits and publishes as usual. Nothing you've built is at risk.
 
 ## When you grow
 
