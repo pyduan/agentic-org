@@ -8,7 +8,9 @@ Everything that defines your presence lives in `source/` as plain files you coul
 
 This is why the system stays coherent as it grows. Change the accent color once in `tokens.css` and the site and every future deck follow. Ban a buzzword once in `voice.md` and it never comes back.
 
-A shared Drive or Dropbox can still be a doorway in: drop documents there or in `source/inbox/` and the AI ingests them. But those spaces are never the source of truth, and the AI never writes back to them. They're built for people, with no real version history and only coarse "who can open this folder" access. The AI curates the truth in the repo instead, through Git, where every change is versioned, attributed, and reversible, and access is fine-grained (who can read, who can write, who can publish). That's both clearer and more secure than a shared folder that slowly fills with `v3_final(2).docx`. Drive feeds the system; Git is what it stands on.
+Your everyday tools stay doorways in, not the source of truth. Notion, Google Drive, Dropbox, your own Desktop: drop things there (or in `source/inbox/`) and the AI ingests them. But those are built for people, so treat what's in them as raw, human, inevitably messy material, and the AI never writes back into them. It curates the truth in the repo instead, through Git, where every change is versioned, attributed, and reversible, and access is fine-grained (who can read, who can write, who can publish). That's both clearer and more secure than a shared folder that slowly fills with `v3_final(2).docx`. Your tools feed the system; Git is what it stands on.
+
+Why Git specifically? Because it's not a technical detail, it's decades of developers solving one hard question: how do many people move a shared thing forward without losing track. You always know which version is the one that counts, everyone can work in parallel, and changes merge cleanly (or flag a conflict to resolve on purpose). You inherit all of that for free, and the AI operates it for you.
 
 ## The AI is the operator, the repo is its manual
 
