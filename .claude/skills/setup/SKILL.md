@@ -22,13 +22,17 @@ Establish, in the owner's own words:
 - Taste: sites or brands they admire, colors and fonts they love or hate, photos of their work if relevant. Concrete references beat adjectives.
 - Domain: do they own one, where is it registered. (Setup works fine before the domain exists; the site lives on a `.pages.dev` URL meanwhile.)
 - Any recurring content: gallery, products, events. These become collections.
-- **Governance, in plain terms**: who else, if anyone, will work on this — and who should have
-  the last word before something goes live? Just the owner → simplest mode, talking to Claude
-  publishes. Owner + a helper or a team → each person gets a right sized to their role (look,
-  propose, or publish), and a review gate goes in front of publishing. Don't solve every case now:
-  record the answers in `brief.md` ▸ Governance, grant GitHub access accordingly (repo Settings →
-  Collaborators: read / write; publishing rights stay with the owner unless they delegate them),
-  and revisit when someone new joins.
+- **Governance and repos, in plain terms**: two short questions, both answered into `ORGANIGRAM.md`
+  (the governance + repo-map file every future session reads). First, *who else, if anyone, will
+  work on this, and who has the last word before something goes live?* Just the owner is the default,
+  and the three rights (use, change, approve) collapse into "you, on `main`". Owner plus a helper or
+  a team means each person gets a right sized to their role, with a review gate in front of
+  publishing. Second, *does the organization already span more than this one repo?* A separate
+  client or project repo, or a private repo for sensitive material that only some people can open.
+  Don't invent structure they don't have: solo with one repo is the honest default and stays trivial.
+  Fill the repo table and the three-rights section of `ORGANIGRAM.md` with their answers, grant
+  GitHub access to match (repo Settings → Collaborators: read / write; publishing stays with the
+  owner unless delegated), and revisit when someone new joins or a second repo appears.
 
 ## 2. Ingest
 
@@ -64,6 +68,7 @@ Replace every TODO in these files with what you learned, keeping each file's str
 - `source/brand/design.md`: the philosophy paragraph, type choices, imagery style.
 - `source/brand/tokens.css`: the real palette and fonts. If using webfonts, self-host them per the design guide.
 - `source/facts/README.md`'s relevance section: in-scope/out-of-scope topics and trusted sources, from what the owner just told you.
+- `ORGANIGRAM.md`: replace the placeholder repo row(s) with the real ones, and write the three rights as they actually stand. Solo with one repo means the template is nearly right already; leave it minimal.
 
 Read each personalized guide back as a whole; it must read as this project's guide, with no template smell left.
 

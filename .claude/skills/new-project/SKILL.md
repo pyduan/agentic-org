@@ -61,6 +61,19 @@ prices, and voice. Instead:
    (e.g. two sites for the same organization), that's a bigger structural decision — flag it and
    propose a monorepo split rather than deciding it silently; don't default into it.
 
+## It's sensitive material — its own access-restricted repo
+
+Same project, but the material is sensitive or meant for only some people (legal documents, HR and
+payroll data, finances, private client records). It does not belong in the shared repo even though
+it's the same organization. Give it a **dedicated private repo** that only the right people can
+open, and leave a short, **fact-free signpost** in this repo (a note in the relevant guide) that
+names the owner, states what's public versus restricted, and explains that the real work happens in
+the private repo when the session can clone and pull it (GitHub permissions are the real gate). If
+it can't, that means the requester isn't authorized: say so and route them to the owner rather than
+reconstructing the restricted fact. Register the repo and who owns it in
+[`ORGANIGRAM.md`](../../../ORGANIGRAM.md) so the access boundary is written down once. A restricted
+repo is never auto-published: commit locally, push only when its owner asks.
+
 ## When still unsure
 
 Default to **not** creating a new repo. Ask one more clarifying question rather than either
