@@ -93,6 +93,15 @@ area gets its own small setup so every future session knows where things go:
   under `apps/`, sensitive material git-ignored or in its own repo), seed that skeleton, then work in
   it. If the area changes how the project is organized, note it in `source/brief.md` too.
 
+  **Ask, don't guess the layout.** A subfolder has no `setup` interview, so run a small one yourself:
+  batch a few plain questions and let the answers shape the skeleton. What kind of material or work
+  does it hold, and what would a good name for it be? How should it be organized, by what dimension
+  (by client, by date, by document type)? Is any of it sensitive or for only some people (which may
+  send it to a git-ignored folder or its own repo instead)? Does it publish, or stay internal? Does
+  it need its own rules, a format guide or a voice note, or does it inherit the project's as-is?
+  Propose a structure back from the answers and confirm it before creating anything, the same way
+  `setup` proposes rather than interrogates.
+
 ## When still unsure
 
 Default to **not** creating a new repo. Ask one more clarifying question rather than either
